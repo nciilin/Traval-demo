@@ -4,7 +4,7 @@
       <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl" alt="轮播图">
       </swiper-slide>
-      <div class="swiper-pagination"  slot="pagination"></div>
+     <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
   </div>
 </template>
@@ -15,8 +15,10 @@ export default {
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination',
-        loop: true
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination'
+        }
       },
       swiperList: [{
         id: '0001',
@@ -39,6 +41,7 @@ export default {
 <style lang="stylus" scoped>
   .wrapper >>> .swiper-pagination-bullet-active
     background: #fff !important
+    z-index: 1
   .wrapper
     overflow: hidden
     width: 100%

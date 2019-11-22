@@ -22,7 +22,9 @@ export default {
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination'
+        pagination: {
+          el: '.swiper-pagination'
+        }
       },
       iconList: [{
         id: '0001',
@@ -87,7 +89,7 @@ export default {
 @import '~styles/varibles.styl'
 @import '~styles/mixins.styl'
 .icons >>> .swiper-pagination-bullet-active
-  background: red !important
+  background: rgba(0,175,190,.8) !important
 .icons >>> .swiper-container
   height: 0
   padding-bottom: 50%
