@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
+    <swiper :options="swiperOption" v-if="showSwiper">
+      <swiper-slide v-for="item of list" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl" alt="轮播图">
       </swiper-slide>
      <div class="swiper-pagination"  slot="pagination"></div>
@@ -12,6 +12,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -19,20 +22,12 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         }
-      },
-      swiperList: [{
-        id: '0001',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201911/14c86b17f55e4b639776b497178f8ef7.jpg_750x200_0d6b121a.jpg'
-      }, {
-        id: '0002',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201910/e7eac5a5e99e6517c61b953c0fece63b.jpg_750x200_4b701cf8.jpg'
-      }, {
-        id: '0003',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201910/93341e649f791afb7d86a4c6c8de0061.jpeg_750x200_d728522a.jpeg'
-      }, {
-        id: '0004',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/b23a39921e8b78f38b61412d691d93ea.jpg_750x200_942ed7bd.jpg'
-      }]
+      }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.list.length
     }
   }
 }
@@ -50,5 +45,4 @@ export default {
     .swiper-img
       background: #ccc
       width: 100%
-
 </style>
