@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="botton-list clearfix">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <div class="button">深圳</div>
           </div>
         </div>
       </div>
