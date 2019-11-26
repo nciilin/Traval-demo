@@ -57,7 +57,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/Traval-demo/Traval/dist/',
+    assetsPublicPath: '/Traval-demo/Traval/dist',
 
     /**
      * Source Maps
