@@ -2,7 +2,13 @@
   <div>
     <div class="title"><span class="iconfont">&#xe85c;</span>猜你喜欢</div>
     <ul>
-      <li class="item" v-for="item of list" :key="item.id">
+      <router-link
+        tag="li"
+        class="item"
+        v-for="item of list"
+        :key="item.id"
+        :to="'/detail/' + item.id"
+      >
         <img class="item-img" :src="item.imgUrl" alt="项目图片">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -10,7 +16,7 @@
           <span class="iconfont item-like">&#xe658;&#xe658;&#xe658;&#xe658;&#xe658;</span>
           <p class="item-like-address">{{item.address}}</p>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
