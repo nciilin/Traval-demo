@@ -79,6 +79,9 @@ export default {
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper, {})
+  },
+  updated () {
+    if (this.scroll) this.scroll.refresh()
   }
 }
 </script>
